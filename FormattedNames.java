@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class FormattedNames {
 /**
@@ -53,7 +55,7 @@ public static String formatNames2(List<String> lst, int limit) {
     int size = lst.size();
     String res = "";
     if (size < limit) {
-        return formatNames(lst);
+        return formatNames(lst); //If list size < limit, call the original formatNames
     }
     for (int i = 0; i < limit; i++) {
         res += lst.get(i);
@@ -69,6 +71,32 @@ public static String formatNames2(List<String> lst, int limit) {
  *  Finally, write a function which prints the maximum
  *  possible number of names within the `max_chars` limit
  *  (versus the first N names that fit within the limit).
+ *
+ *  Note: Only characters in names count towards the max_chars limit
  */
+
+public static String formatNames3(List<String> lst, int max_chars) {
+    if (lst == null) {
+        return null;
+    }
+    Stack<String> used = new Stack<>(); //Stack to track used names
+    String res = "";
+    for (int i = 0; i < lst.size(); i++) {
+        if (max_chars - lst.get(i).length() > 0 && i == lst.size() - 1) {
+            return formatNames(lst);
+        }
+        if (max_chars - lst.get(i).length() >= 0) {
+            res = res + lst.get(i) + ", ";
+            max_chars -= lst.get(i).length();
+            used.add(lst.get(i));
+        } else {
+            break;
+        }
+    }
+    if (used.size() < lst.size()) {
+        res += "and " + (lst.size() - used.size()) + " more";
+    }
+    return res;
+}
 
 }
