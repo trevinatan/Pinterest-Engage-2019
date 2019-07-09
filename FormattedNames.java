@@ -24,6 +24,10 @@ public static String formatNames(List<String> lst) {
         return null;
     }
 
+    if (lst.size() == 1) {
+        return lst.get(0);
+    }
+
     String res = "";
     int len = lst.size();
     for (int i = 0; i < len - 1; i++) {

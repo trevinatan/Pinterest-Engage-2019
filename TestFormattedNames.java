@@ -5,9 +5,9 @@ import java.util.List;
 public class TestFormattedNames {
 
     public static void main (String[] args) {
-        //testFormatNames();
+        testFormatNames();
         //testFormatNames2();
-        testFormatNames3();
+        //testFormatNames3();
     }
 
     public static void testFormatNames() {
@@ -17,6 +17,9 @@ public class TestFormattedNames {
 
         List<String> list1 = Arrays.asList("Alice", "Bob", "Carlos", "Diana");
         System.out.println(fs.formatNames(list1));
+
+        List<String> list2 = Arrays.asList("Taffy");
+        System.out.println(fs.formatNames(list2));
     }
 
     public static void testFormatNames2() {

@@ -1,0 +1,74 @@
+# LEVEL 1
+ 
+#
+ 
+# The exercise here is to write a function that takes a single argument (a
+ 
+# list of names) and returns a string representing the English-formatted
+ 
+# conjunction of those names.
+ 
+#
+ 
+# For example, given these names: ['Alice', 'Bob', 'Carlos', 'Diana']
+ 
+#
+ 
+# The output would be: "Alice, Bob, Carlos and Diana"
+ 
+#
+ 
+# This type of function is useful when building user interfaces that show the
+ 
+# list of people in a conversation, for example.
+ 
+#
+ 
+# Whether or not the output follows the Oxford comma rule is up to the author.
+
+def level1(lst):
+	if len(lst) == 0 or lst == null:
+		return null
+	if len(lst) == 1:
+		return lst[0]
+	res = ""
+	i = 0
+	while i < len(lst) - 1:
+		res += len[i] + ", "
+	res += ", and" + lst[len(lst) - 1]
+	return res
+
+lst1 = ['Alice', 'Bob', 'Carlos', 'Diana']
+a = level1(lst)
+print(a)
+ 
+# LEVEL 2
+ 
+#
+ 
+# We iterate on the problem by adding a second argument to our function.
+ 
+#
+ 
+# Now lets add a new argument called `limit`. This controls the maximum number of 
+ 
+# names that should be displayed.  Any remaining items are "summarized" using the
+ 
+# string "and # more".
+ 
+#
+ 
+# For example, given these names: ['Alice', 'Bob', 'Carlos', 'Diana'] and limit: 2
+ 
+#
+ 
+# The output would be: "Alice, Bob and 2 more"
+ 
+# LEVEL 3
+ 
+#
+ 
+# Finally, write a function which prints the maximum  
+# possible number of names within the `max_chars` limit
+ 
+# (versus the first N names that fit within the limit).
