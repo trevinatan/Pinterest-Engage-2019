@@ -32,5 +32,8 @@ def get_cal_days(intervals):
     for i in intervals:
         for x in range(i[0], i[1] + 1):
             cal[x] = 1
-    return len(dict.keys())
+    return len(cal.keys())
 
+
+a = get_cal_days([[2, 3], [1, 1], [3, 5], [7, 7]])
+print(a)
