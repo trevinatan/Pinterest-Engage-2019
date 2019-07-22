@@ -61,6 +61,7 @@ def level1(lst):
  
 # The output would be: "Alice, Bob and 2 more"
 
+
 def level2(lst, limit):
 	if lst is None or len(lst) == 0:
 		return None
@@ -82,6 +83,7 @@ def level2(lst, limit):
 # possible number of names within the `max_chars` limit
  
 # (versus the first N names that fit within the limit).
+
 
 def level3_1(lst, max_chars):
 	"""Counts the number of items that will fit in max_chars and calls level2 function on the new limit"""
