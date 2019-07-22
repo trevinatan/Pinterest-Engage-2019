@@ -2,11 +2,12 @@
 # Each person works a certain number of days, as illustrated X’s in the “calendar” below:
 #                1   2   3   4   5   6   7  ... M
 #
-# Victor           x   x
+# Victor             x   x
 #
-# Clara       x        x   x   x
+# Clara          x        x   x   x
 #
-# Ali                                         x
+# Ali                                    x
+
 # We want to calculate the number of calendars for a particular project schedule.
 # Calendar days are equal to the number of days where at least one person worked.
 # For this example -
@@ -24,4 +25,12 @@
 # Note that the interval range is inclusive.
 # Write a function get_cal_days(intervals)that takes in a list of intervals, and returns the number of
 # calendar days as an int.
+
+
+def get_cal_days(intervals):
+    cal = {}
+    for i in intervals:
+        for x in range(i[0], i[1] + 1):
+            cal[x] = 1
+    return len(dict.keys())
 
